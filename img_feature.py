@@ -6,17 +6,13 @@ import cv2
 from matplotlib import pyplot as plt
 import numpy as np
 
-img1 = cv2.imread('/Users/shichao/Downloads/mmexport1543811694297.jpg')          # queryImage
-# img1 = cv2.imread('/Users/shichao/Downloads/990.jpg')
-plt.imshow(img1)
-print(img1.shape)
+img1 = cv2.imread('/Users/shichao/Downloads/1-removebg.png')          # queryImage
 
-plt.show()
-img2 = cv2.imread('/Users/shichao/Downloads/b_mmexport1543811694297.png',0) # trainImage
+img2 = cv2.imread('/Users/shichao/Downloads/3-removebg.png') # trainImage
 
 
 # Initiate SIFT detector
-feat = cv2.xfeatures2d.SURF_create()
+feat = cv2.xfeatures2d.SIFT_create(4000)
 
 # img1 = cv2.cvtColor(img1_rgb, cv2.COLOR_BGR2GRAY)
 # img2 = cv2.cvtColor(img2_rgb, cv2.COLOR_BGR2GRAY)
@@ -47,9 +43,9 @@ draw_params = dict(matchColor = (0,255,0),
                    matchesMask = matchesMask,
                    flags = 0)
 
-# img3 = cv2.drawMatchesKnn(img1,kp1,img2,kp2,matches,None,**draw_params)
-# plt.imshow(img3,),plt.show()
-img1_feat = img1
-cv2.drawKeypoints(img1,kp1,img1_feat)
-# img4 = cv2.drawKeypoints(img1,kp1,flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+img3 = cv2.drawMatchesKnn(img1,kp1,img2,kp2,matches,None,**draw_params)
+plt.imshow(img3,),plt.show()
+# img1_feat = img1
+# cv2.drawKeypoints(img1,kp1,img1_feat)
+# # img4 = cv2.drawKeypoints(img1,kp1,flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
 # plt.imshow(img1_feat),plt.title('surf'),plt.show()
