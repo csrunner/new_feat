@@ -3,3 +3,6 @@
 .idea/
 *.so
 *.pyc
+CMakeCache.txt
+MakeFile
+./CMakeFile
