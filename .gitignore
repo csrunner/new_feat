@@ -5,4 +5,5 @@
 *.pyc
 CMakeCache.txt
 MakeFile
-./CMakeFiles
+CMakeFiles/
+cmake_install.cmake
